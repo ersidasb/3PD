@@ -23,12 +23,13 @@ namespace RSA
         public MainWindow()
         {
             InitializeComponent();
+            rBtnEncrypt.IsChecked = true;
         }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            /*try
+            {*/
                 RSA_algorithm rsa = new RSA_algorithm();
                 if(rBtnEncrypt.IsChecked==true)
                 {
@@ -36,23 +37,27 @@ namespace RSA
                 }
                 else
                 {
-
+                    
                 }
-            }
+            /*}
             catch(Exception exc)
             {
                 MessageBox.Show(exc.Message);
-            }
+            }*/
         }
 
         private void rBtnEncrypt_Checked(object sender, RoutedEventArgs e)
         {
             updateButton();
+            gridEncrypt.Visibility = Visibility.Visible;
+            gridDecrypt.Visibility = Visibility.Collapsed;
         }
 
         private void rBtnDecrypt_Checked(object sender, RoutedEventArgs e)
         {
             updateButton();
+            gridEncrypt.Visibility = Visibility.Collapsed;
+            gridDecrypt.Visibility = Visibility.Visible;
         }
 
         private void tBxInputText_TextChanged(object sender, TextChangedEventArgs e)

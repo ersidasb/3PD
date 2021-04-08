@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace RSA
             int e=2;
             while(e<fi)
             {
-                if (DBD(Convert.ToUInt64(e), Convert.ToUInt64(fi)) == 1)
+                if (DBD(e, fi) == 1)
                     break;
                 else
                     e++;
@@ -31,18 +32,27 @@ namespace RSA
             model.n = n;
             model.y = encrypted;
             DataBase.SaveEncrypted(model);
-            //string[] i = encrypted.Split(',');
-            //int[] ch = Array.ConvertAll(i, int.Parse);
         }
 
         public string decrypt(EncryptedModel model)
         {
-            string decrypted;
+            int[] encrypted = Array.ConvertAll(model.y.Split(','), int.Parse);
+            string decrypted = "";
+            foreach (int i in encrypted)
+                decrypted += Convert.ToChar((Int32)BigInteger.ModPow(i, IEA(model.e, phi(model.n)), model.n));
             return decrypted;
         }
-
-        private ulong DBD(ulong a, ulong b)
+        private int phi(int n)
         {
+            int result = 1;
+            for (int i = 2; i < n; i++)
+                if (DBD(i,n) == 1)
+                    result++;
+            return result;
+        }
+        private int DBD(int a, int b)
+        {
+
             while (a != 0 && b != 0)
             {
                 if (a > b)
@@ -50,7 +60,24 @@ namespace RSA
                 else
                     b %= a;
             }
-            return a | b;
+            return  a | b;
+        }
+        public int IEA(int a, int b)
+        {
+            int x0 = 1, xn = 1, x1 = 0, f, r = a % b;
+
+            while (r > 0)
+            {
+                f = a / b;
+                xn = x0 - f * x1;
+
+                x0 = x1;
+                x1 = xn;
+                a = b;
+                b = r;
+                r = a % b;
+            }
+            return Convert.ToInt32(x1);
         }
     }
 
