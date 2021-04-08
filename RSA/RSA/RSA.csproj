@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD9AA932-E292-4F3B-8BAD-578512863EC5}</ProjectGuid>
+    <ProjectGuid>{1808BEE9-49CB-4165-BF0A-4367AF93B05E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RSA</RootNamespace>
     <AssemblyName>RSA</AssemblyName>

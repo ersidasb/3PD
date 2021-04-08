@@ -5,8 +5,105 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RSA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" FontSize="14">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0"
+                           Text="Input"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="20" FontWeight="Bold"
+                           Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Column="0" Grid.Row="1"
+                           Text="Message:"
+                           HorizontalAlignment="Right"/>
+                <TextBlock Grid.Column="0" Grid.Row="3"
+                           Text="p:"
+                           HorizontalAlignment="Right"/>
+                <TextBlock Grid.Column="0" Grid.Row="5"
+                           Text="q:"
+                           HorizontalAlignment="Right"/>
+                <TextBox x:Name="tBxInputText"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         Margin="5,0,0,0" TextChanged="tBxInputText_TextChanged"/>
+                <TextBox x:Name="tBxInputP"
+                         Grid.Column="1"
+                         Grid.Row="3"
+                         Margin="5,0,0,0" TextChanged="tBxInputP_TextChanged"/>
+                <TextBox x:Name="tBxInputQ"
+                         Grid.Column="1"
+                         Grid.Row="5"
+                         Margin="5,0,0,0" TextChanged="tBxInputQ_TextChanged"/>
+            </Grid>
+
+            <Grid Grid.Column="2" Grid.Row="1"
+                  Margin="15,0,15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="52"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1"
+                           Text="Mode"
+                           HorizontalAlignment="Center"
+                           FontSize="18"/>
+                <RadioButton x:Name="rBtnEncrypt"
+                             Grid.Row="2" Content="Encrypt"
+                             HorizontalAlignment="Center"
+                             Margin="25,10,25.4,0" Height="17" VerticalAlignment="Top" Checked="rBtnEncrypt_Checked"/>
+                <RadioButton x:Name="rBtnDecrypt"
+                             Grid.Row="3" Content="Decrypt"
+                             HorizontalAlignment="Center"
+                             Margin="0,10,0,0" Checked="rBtnDecrypt_Checked"/>
+                <Button x:Name="btnCalculate"
+                        Grid.Row="5" Content="Calculate"
+                        Click="btnCalculate_Click"
+                        IsEnabled="False"/>
+            </Grid>
+            
+            <Grid Grid.Column="3" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0"
+                           Text="Output"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="20" FontWeight="Bold"/>
+                <TextBox x:Name="tBxOutput" Grid.Column="0" Grid.Row="1"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
