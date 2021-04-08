@@ -24,7 +24,7 @@ namespace RSA
             string encrypted = "";
             foreach(char c in x.ToCharArray())
             {
-                encrypted += $"{Convert.ToString(Math.Pow(Convert.ToInt32(c),e)%n)},";
+                encrypted += $"{Convert.ToString((Int32)BigInteger.ModPow(c,e,n))},";
             }
             encrypted = encrypted.Remove(encrypted.Length - 1);
             EncryptedModel model = new EncryptedModel();
@@ -102,8 +102,6 @@ namespace RSA
             t0 = 0;
             t1 = 1;
 
-            // pirma karta kai eina, buna 0, nes 89 eilutes kintamieji 0, 1
-
             // ri yra ieskant DBD isskaidomas skaicius (neskaitant pirmos eilutes)
             while (ri >= 1)
             {
@@ -124,16 +122,11 @@ namespace RSA
 
                 r0 = r1; // pasibaigus iteracijai pasikeicia rėžiai t.y r0 ir r1, į kitos iteracijos skaičius. r0 pasikeicia į liekaną, ri 
                 r1 = ri; // 
-
-                //Console.WriteLine(s.ToString() + " " + t.ToString());
             }
 
-            //Console.WriteLine(s.ToString());
-            //Console.WriteLine(r0const.ToString() + " " + r1const.ToString());
             if ((s * r0const) + (t * r1const) == 1)
             {
                 d = t;
-                //Console.WriteLine(d);
                 if (d < 0)
                 {
                     d = d + N;
@@ -143,27 +136,6 @@ namespace RSA
             }
             return 0;
         }
-
-        /*public int IEA(int a, int b)
-        {
-            int x0 = 1, xn = 1, y0 = 0, yn = 0, x1 = 0, y1 = 1, f, r = a % b;
-
-            while (r > 0)
-            {
-                f = a / b;
-                xn = x0 - f * x1;
-                yn = y0 - f * y1;
-
-                x0 = x1;
-                y0 = y1;
-                x1 = xn;
-                y1 = yn;
-                a = b;
-                b = r;
-                r = a % b;
-            }
-            return Convert.ToInt32(x1);
-        }*/
     }
 
 

@@ -42,6 +42,10 @@ namespace RSA
                 {
                     if (Convert.ToInt32(tBxInputP.Text) * Convert.ToInt32(tBxInputQ.Text) < 127)
                         throw new Exception("p*q must be larger than 126");
+                    if (Convert.ToInt32(tBxInputP.Text) > 1000)
+                        throw new Exception("p too large");
+                    if (Convert.ToInt32(tBxInputQ.Text) > 1000)
+                        throw new Exception("q too large");
                     if (!isPrime(Convert.ToInt32(tBxInputP.Text)))
                         throw new Exception("p is not prime");
                     if (!isPrime(Convert.ToInt32(tBxInputQ.Text)))
