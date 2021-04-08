@@ -67,7 +67,14 @@
     </ApplicationDefinition>
     <Compile Include="DataBase.cs" />
     <Compile Include="EncryptedModel.cs" />
+    <Compile Include="encryptedResult.xaml.cs">
+      <DependentUpon>encryptedResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RSA_algorithm.cs" />
+    <Page Include="encryptedResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

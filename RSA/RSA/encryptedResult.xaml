@@ -5,8 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RSA"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="20" d:DesignWidth="290" FontSize="10">
+    <Grid Background="Black" Margin="0,0,0,2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="txtMessage"
+                   Background="White"
+                   Margin="1,1,1,1"/>
+        
+        <TextBlock x:Name="txte"
+                   Grid.Column="1"
+                   Background="White"
+                   Margin="0,1,1,1"/>
+        
+        <TextBlock x:Name="txtn"
+                   Grid.Column="2"
+                   Background="White"
+                   Margin="0,1,1,1"/>
+
+        <Button x:Name="btnSelect"
+                Grid.Column="3"
+                Margin="0,1,1,1"
+                Content="Select" Click="btnSelect_Click"/>
     </Grid>
 </UserControl>

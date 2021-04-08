@@ -25,7 +25,7 @@ namespace RSA
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Data (encryptedText, n, e) values (@y, @n, @e)", model);
+                cnn.Execute("insert into Data (y, n, e) values (@y, @n, @e)", model);
             }
         }
 

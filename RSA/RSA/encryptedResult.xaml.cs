@@ -24,5 +24,15 @@ namespace RSA
         {
             InitializeComponent();
         }
+
+        public EncryptedModel model = new EncryptedModel();
+        public Delegate update;
+        public Delegate sendData;
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            update.DynamicInvoke();
+            sendData.DynamicInvoke(model);
+        }
     }
 }
