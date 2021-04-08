@@ -26,8 +26,19 @@ namespace RSA
                 encrypted += $"{Convert.ToString(Math.Pow(Convert.ToInt32(c),e)%n)},";
             }
             encrypted = encrypted.Remove(encrypted.Length - 1);
+            EncryptedModel model = new EncryptedModel();
+            model.e = e;
+            model.n = n;
+            model.y = encrypted;
+            DataBase.SaveEncrypted(model);
             //string[] i = encrypted.Split(',');
             //int[] ch = Array.ConvertAll(i, int.Parse);
+        }
+
+        public string decrypt(EncryptedModel model)
+        {
+            string decrypted;
+            return decrypted;
         }
 
         private ulong DBD(ulong a, ulong b)

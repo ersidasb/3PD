@@ -28,3 +28,10 @@ C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\
 C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\obj\Debug\RSA.csproj.CoreCompileInputs.cache
 C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\obj\Debug\RSA.exe
 C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\obj\Debug\RSA.pdb
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\bin\Debug\encryptedDB.db
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\obj\Debug\RSA_Content.g.cs
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\bin\Debug\Dapper.dll
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\bin\Debug\System.Data.SQLite.dll
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\bin\Debug\Dapper.xml
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\bin\Debug\System.Data.SQLite.xml
+C:\Users\ersid\Desktop\Kolegijai\2 kursas\2 semestras\saugumas\3_PD\3PD\RSA\RSA\obj\Debug\RSA.csproj.CopyComplete

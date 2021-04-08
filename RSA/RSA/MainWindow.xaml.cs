@@ -72,7 +72,7 @@ namespace RSA
         
         private void updateButton()
         {
-            if (tBxInputText.Equals("") || tBxInputP.Equals("") || tBxInputQ.Equals("") || rBtnEncrypt.IsChecked == false && rBtnDecrypt.IsChecked == false)
+            if (tBxInputText.Text.Equals("") || tBxInputP.Text.Equals("") || tBxInputQ.Text.Equals("") || (rBtnEncrypt.IsChecked == false && rBtnDecrypt.IsChecked == false))
                 btnCalculate.IsEnabled = false;
             else
                 btnCalculate.IsEnabled = true;
