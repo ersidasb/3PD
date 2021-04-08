@@ -52,15 +52,21 @@
                 <TextBox x:Name="tBxInputText"
                          Grid.Column="1"
                          Grid.Row="1"
-                         Margin="5,0,0,0" TextChanged="tBxInputText_TextChanged"/>
+                         Margin="5,0,0,0"
+                         TextChanged="tBxInputText_TextChanged"
+                         TextWrapping="Wrap"/>
                 <TextBox x:Name="tBxInputP"
                          Grid.Column="1"
                          Grid.Row="3"
-                         Margin="5,0,0,0" TextChanged="tBxInputP_TextChanged"/>
+                         Margin="5,0,0,0"
+                         TextChanged="tBxInputP_TextChanged"
+                         TextWrapping="Wrap"/>
                 <TextBox x:Name="tBxInputQ"
                          Grid.Column="1"
                          Grid.Row="5"
-                         Margin="5,0,0,0" TextChanged="tBxInputQ_TextChanged"/>
+                         Margin="5,0,0,0"
+                         TextChanged="tBxInputQ_TextChanged"
+                         TextWrapping="Wrap"/>
             </Grid>
 
             <Grid x:Name="gridDecrypt" Visibility="Visible" Grid.Column="1" Grid.Row="1">
@@ -106,7 +112,7 @@
                         Click="btnCalculate_Click"
                         IsEnabled="False"/>
             </Grid>
-            
+
             <Grid Grid.Column="3" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -118,7 +124,11 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="20" FontWeight="Bold"/>
-                <TextBox x:Name="tBxOutput" Grid.Column="0" Grid.Row="1" IsReadOnly="True"/>
+                <TextBox x:Name="tBxOutput"
+                         Grid.Column="0"
+                         Grid.Row="1"
+                         IsReadOnly="True"
+                         TextWrapping="Wrap"/>
             </Grid>
         </Grid>
     </Grid>
