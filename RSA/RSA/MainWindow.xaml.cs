@@ -27,7 +27,22 @@ namespace RSA
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                RSA_algorithm rsa = new RSA_algorithm();
+                if(rBtnEncrypt.IsChecked==true)
+                {
+                    rsa.encrypt(Convert.ToInt32(tBxInputP.Text), Convert.ToInt32(tBxInputQ.Text),tBxInputText.Text);
+                }
+                else
+                {
 
+                }
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
 
         private void rBtnEncrypt_Checked(object sender, RoutedEventArgs e)
